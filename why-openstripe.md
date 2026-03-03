@@ -35,14 +35,14 @@ The result is a self-hosted platform that gives you the full OpenClaw-style expe
 
 ## What This Means in Practice
 
-| | OpenClaw / API-based | OpenStripe |
-|--|----------------------|------------|
+| | OpenClaw | OpenStripe |
+|--|----------|------------|
 | Cost model | Pay per token (API pricing) | Claude subscription (flat rate) |
 | TOS compliance | Subscription use violates TOS | Fully compliant (Claude Code) |
-| Hosting | Their servers | Your server |
-| Data privacy | Their infrastructure | 100% yours |
-| Customisation | Limited | Full source access |
-| Memory / context | Depends on platform | Built-in, self-hosted |
+| Hosting | Self-hosted | Self-hosted |
+| Data privacy | 100% yours | 100% yours |
+| Customisation | Full source access | Full source access |
+| Memory / context | Depends on setup | Built-in, self-hosted |
 
 ---
 
