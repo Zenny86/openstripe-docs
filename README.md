@@ -27,15 +27,17 @@ OpenStripe is a self-hosted platform that lets you run Claude Code tasks via Tel
 | [architecture.md](architecture.md) | System architecture, component map, data flow |
 | [setup.md](setup.md) | Installation, configuration, first run |
 | [pm2-management.md](pm2-management.md) | PM2 process management — CRITICAL |
-| [telegram-bot.md](telegram-bot.md) | Telegram commands, multi-task, voice |
+| [telegram-bot.md](telegram-bot.md) | Telegram commands, multi-task, voice transcription |
 | [api-reference.md](api-reference.md) | All REST API endpoints |
 | [memory-system.md](memory-system.md) | How persistent memory works |
 | [claude-integration.md](claude-integration.md) | Claude CLI runner, streaming, sessions |
 | [n8n-integration.md](n8n-integration.md) | N8N webhook setup |
-| [skills.md](skills.md) | Installed skills catalog |
+| [skills.md](skills.md) | Installed skills catalog (109 skills) |
 | [environment.md](environment.md) | Server environment, secrets, paths |
 | [troubleshooting.md](troubleshooting.md) | Common issues and fixes |
 | [deployment-guide.md](deployment-guide.md) | Step-by-step self-hosting guide from scratch |
+| [discord-bot.md](discord-bot.md) | Discord bot — slash commands, auto-mod, n8n webhooks |
+| [social-media-integrations.md](social-media-integrations.md) | Discord feedback agent + social media analyzer |
 | [why-openstripe.md](why-openstripe.md) | Origin story — why this was built |
 
 ---
@@ -62,6 +64,21 @@ pm2 list
 - **Backend:** Node.js, Express, WebSocket, better-sqlite3
 - **Frontend:** React 19, Vite, Tailwind CSS 4, Recharts
 - **AI:** Claude Code CLI (`claude`) spawned as subprocess
-- **Bot:** node-telegram-bot-api
+- **Bot:** node-telegram-bot-api, discord.js v14
 - **Process manager:** PM2
 - **Auth:** JWT (24h expiry) + bcrypt
+- **Voice transcription:** Groq Whisper (`whisper-large-v3-turbo`)
+
+---
+
+## Integrations Built
+
+| Integration | Description |
+|-------------|-------------|
+| Telegram bot | Primary task interface — commands, multi-task, voice |
+| Discord bot | Community management + n8n webhook target (port 3849) |
+| N8N | Workflow automation, webhook triggers, SSH runners |
+| Groq Whisper | Voice-to-text for Telegram voice messages |
+| Gmail (himalaya) | Email via IMAP/SMTP from CLI |
+| Discord feedback agent | Feedback channel → Claude agent → auto-response |
+| Social media analyzer | TikTok + Instagram scraper → Claude scoring → Discord embeds |
